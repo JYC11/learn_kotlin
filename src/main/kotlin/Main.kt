@@ -1,4 +1,4 @@
 fun main(args: Array<String>) {
-    dayFourPartOne()
-    dayFourPartTwo()
+    val input = readInput("day05-1")
+    println(input)
 }
