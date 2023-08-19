@@ -1,3 +1,5 @@
+package adventOfCode
+
 class Day03 {
     private fun toScore(x: Char): Int {
         var score = 0

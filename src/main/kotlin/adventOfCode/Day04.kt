@@ -1,3 +1,5 @@
+package adventOfCode
+
 private fun convertRangesToSet(ranges: List<String>): List<Set<Int>> {
     val firstRange: List<Int> = ranges[0].split("-").map { it.toInt() }
     val secondRange: List<Int> = ranges[1].split("-").map { it.toInt() }
