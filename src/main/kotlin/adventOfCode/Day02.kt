@@ -1,3 +1,5 @@
+package adventOfCode
+
 open class Day02 {
     private val abcToRps = mapOf("A" to "R", "B" to "P", "C" to "S")
     private val xyzToRps = mapOf("X" to "R", "Y" to "P", "Z" to "S")

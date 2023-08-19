@@ -1,3 +1,5 @@
+package adventOfCode
+
 open class Day01 {
     private fun parseInput(): List<Int> {
         val toIntIfNumber = { x: String ->

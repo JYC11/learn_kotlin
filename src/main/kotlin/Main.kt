@@ -1,37 +1,35 @@
+import dataStructsAndAlgos.linkedList.LinkedList
+
 fun main(args: Array<String>) {
-    val input = readInput("day05").split("\n\n")
-    val rawCrates: List<String> = input[0]
-        .replace("    ", " [&]")
-        .split("\n")
-        .filter { !it.contains("1") }
-        .map { it.trim() }
-        .map { it.replace("][", "] [") }
+    val list = LinkedList<Int>()
+    list.push(3).push(2).push(1)
+    println(list)
 
-    val crates = mutableMapOf<Int, MutableList<String>>(
-        1 to mutableListOf<String>(),
-        2 to mutableListOf<String>(),
-        3 to mutableListOf<String>(),
-        4 to mutableListOf<String>(),
-        5 to mutableListOf<String>(),
-        6 to mutableListOf<String>(),
-        7 to mutableListOf<String>(),
-        8 to mutableListOf<String>(),
-        9 to mutableListOf<String>(),
-    )
-
-    for (crateRow in rawCrates) {
-        var i = 0
-        val temp = crateRow.split(" ")
-        while (i < 9 && i < temp.size) {
-            val crate = temp[i].replace("[", "").replace("]", "")
-            if (crate != "&") {
-                crates[i + 1]?.add(crate)
-            }
-            i += 1
-        }
+    var middleNode = list.nodeAt(1)!!
+    for (i in 1..3) {
+        middleNode = list.insert(-1 * i, middleNode)
     }
 
-    crates.forEach { (key, value) ->
-        println("col: $key, crates: $value")
+    println(list)
+
+    val list2 = LinkedList<Int>()
+    list2.append(4).append(5).append(6)
+    println(list2)
+    val poppedValue = list2.pop()
+    println(list2)
+    println(poppedValue)
+    list2.push(4)
+    val removedValue = list2.removeLast()
+    println(list2)
+    println(removedValue)
+    list2.append(6)
+
+    val index = 1
+    val node = list.nodeAt(index - 1)!!
+    val removedValue2 = list.removeAfter(node)
+    println(list)
+    println(removedValue2)
+    for (item in list) {
+        println(item)
     }
 }
