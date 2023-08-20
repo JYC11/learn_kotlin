@@ -12,3 +12,11 @@ data class Node<T>(
         }
     }
 }
+
+fun <T> Node<T>.printInReverse() {
+    this.next?.printInReverse()
+    if (this.next != null) {
+        print(" -> ")
+    }
+    print(this.value.toString())
+}
