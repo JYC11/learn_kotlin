@@ -1,7 +1,7 @@
-import dataStructsAndAlgos.linkedList.linkedListDemo
-import dataStructsAndAlgos.stack.stackDemo
+import dataStructsAndAlgos.queue.queueDemo
 
 fun main() {
-    linkedListDemo()
-    stackDemo()
+//    linkedListDemo()
+//    stackDemo()
+    queueDemo()
 }
