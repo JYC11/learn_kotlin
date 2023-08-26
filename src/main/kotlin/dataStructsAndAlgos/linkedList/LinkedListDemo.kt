@@ -32,7 +32,11 @@ fun linkedListDemo() {
     for (item in list) {
         println(item)
     }
+    println("standard reverse")
     list.printInReverse()
+    println()
+    println("reverse with stack")
+    list.printInReverseWithStack()
     println()
     println(list.getMiddle()?.value)
     println(list.reversed())

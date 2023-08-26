@@ -1,5 +1,7 @@
 import dataStructsAndAlgos.linkedList.linkedListDemo
+import dataStructsAndAlgos.stack.stackDemo
 
-fun main(args: Array<String>) {
+fun main() {
     linkedListDemo()
+    stackDemo()
 }

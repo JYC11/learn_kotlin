@@ -1,5 +1,7 @@
 package dataStructsAndAlgos.linkedList
 
+import dataStructsAndAlgos.stack.StackImpl
+
 class LinkedList<T> : Iterable<T>, Collection<T>, MutableIterable<T>, MutableCollection<T> {
     private var head: Node<T>? = null
     private var tail: Node<T>? = null
@@ -173,6 +175,19 @@ class LinkedList<T> : Iterable<T>, Collection<T>, MutableIterable<T>, MutableCol
 
 fun <T> LinkedList<T>.printInReverse() {
     this.nodeAt(0)?.printInReverse()
+}
+
+fun <T> LinkedList<T>.printInReverseWithStack() {
+    val stack = StackImpl<T>()
+
+    for (node in this) {
+        stack.push(node)
+    }
+    var node = stack.pop()
+    while (node != null) {
+        println(node)
+        node = stack.pop()
+    }
 }
 
 fun <T> LinkedList<T>.getMiddle(): Node<T>? {
