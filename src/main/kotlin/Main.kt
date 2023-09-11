@@ -1,8 +1,9 @@
-import dataStructsAndAlgos.tree.treeDemo
+import dataStructsAndAlgos.binarytree.binaryTreeDemo
 
 fun main() {
 //    linkedListDemo()
 //    stackDemo()
 //    queueDemo()
-    treeDemo()
+//    treeDemo()
+    binaryTreeDemo()
 }
