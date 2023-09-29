@@ -1,15 +1,21 @@
-package dataStructsAndAlgos.binarytree
+package dataStructsAndAlgos.binaryTree
 
 import kotlin.math.max
 
 typealias Visitor<T> = (T) -> Unit
 
-class BinaryNode<T : Any>(var value: T) {
+class BinaryNode<T : Comparable<T>>(var value: T) {
 
     var leftChild: BinaryNode<T>? = null
     var rightChild: BinaryNode<T>? = null
 
     override fun toString() = diagram(this)
+
+    val min: BinaryNode<T>?
+        get() = leftChild?.min ?: this
+
+    val isBinarySearchTree: Boolean
+        get() = isBST(this, min = null, max = null)
 
     private fun diagram(
         node: BinaryNode<T>?,
@@ -76,5 +82,33 @@ class BinaryNode<T : Any>(var value: T) {
 
     fun deserializeOptimized(list: MutableList<T?>): BinaryNode<T>? {
         return deserialize(list.asReversed())
+    }
+
+    private fun isBST(tree: BinaryNode<T>?, min: T?, max: T?): Boolean {
+        tree ?: return true
+
+        if (min != null && tree.value <= min) {
+            return false
+        } else if (max != null && tree.value > max) {
+            return false
+        }
+        return isBST(tree.leftChild, min, tree.value) && isBST(tree.rightChild, tree.value, max)
+    }
+
+    override fun equals(other: Any?): Boolean {
+        return if (other != null && other is BinaryNode<*>) {
+            this.value == other.value &&
+                    this.leftChild == other.leftChild &&
+                    this.rightChild == other.rightChild
+        } else {
+            false
+        }
+    }
+
+    override fun hashCode(): Int {
+        var result = value.hashCode()
+        result = 31 * result + (leftChild?.hashCode() ?: 0)
+        result = 31 * result + (rightChild?.hashCode() ?: 0)
+        return result
     }
 }

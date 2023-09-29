@@ -1,4 +1,4 @@
-package dataStructsAndAlgos.binarytree
+package dataStructsAndAlgos.binaryTree
 
 fun binaryTreeDemo() {
     val zero = BinaryNode(0)
