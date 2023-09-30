@@ -1,5 +1,7 @@
 package dataStructsAndAlgos.binaryTree
 
+import kotlin.math.pow
+
 fun binarySearchTreeDemo() {
     val bst = BinarySearchTree<Int>()
     (0..4).forEach {
@@ -25,4 +27,12 @@ fun binarySearchTreeDemo() {
 
     exampleTree.remove(3)
     println(exampleTree)
+}
+
+fun leafNodes(height: Int): Int {
+    return 2.0.pow(height).toInt()
+}
+
+fun nodes(height: Int): Int {
+    return 2.0.pow(height + 1).toInt() - 1
 }
