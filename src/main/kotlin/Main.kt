@@ -1,4 +1,4 @@
-import dataStructsAndAlgos.binaryTree.binarySearchTreeDemo
+import dataStructsAndAlgos.trie.trieDemo
 
 fun main() {
 //    linkedListDemo()
@@ -6,5 +6,6 @@ fun main() {
 //    queueDemo()
 //    treeDemo()
 //    binaryTreeDemo()
-    binarySearchTreeDemo()
+//    binarySearchTreeDemo()
+    trieDemo()
 }
